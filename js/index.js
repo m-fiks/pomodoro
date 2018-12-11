@@ -1,20 +1,26 @@
 const date = Date.now();
-const startTime = 25;
+let startTime = 25;
 
-appendage = () => {
-    //document.getElementById("timer").append(`<p>${startTime}</p>`)
+// appendage = () => {
+//     let poppy = document.getElementById("timer")
+//     poppy.append("<p>Text.</p>")
+// }
+
+// appendage();
+
+minusAMinute = () => {
+    if (startTime > 0 ) {
+        for(let i=0; i< startTime; i++) {
+            startTime--;
+        }
+    }
 }
-
-appendage();
 
 timefunction = () => {
     setInterval( () => {
-        document.getElementById("timer").innerHTML = date;
-    }, 5000);
+        minusAMinute();
+        document.getElementById("timer").innerHTML = `${startTime} minutes left`;
+    }, 10000);
 }
 
 timefunction();
-
-minusAMinute = () => {
-
-}
