@@ -8,19 +8,16 @@ let startTime = 25;
 
 // appendage();
 
+const start = document.getElementById("start-button")
+
+start.addEventListener('click', () => {
+    document.getElementById("timer").innerHTML = startTime;
+})
+
 minusAMinute = () => {
-    if (startTime > 0 ) {
-        for(let i=0; i< startTime; i++) {
-            startTime--;
-        }
+    for (let i=0; i<startTime; i--) {
+
     }
 }
 
-timefunction = () => {
-    setInterval( () => {
-        minusAMinute();
-        document.getElementById("timer").innerHTML = `${startTime} minutes left`;
-    }, 10000);
-}
-
-timefunction();
+setInterval(minusAMinute, 6000);
