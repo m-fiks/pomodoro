@@ -10,14 +10,16 @@ let startTime = 25;
 
 const start = document.getElementById("start-button")
 
-start.addEventListener('click', () => {
-    document.getElementById("timer").innerHTML = startTime;
-})
-
 minusAMinute = () => {
-    for (let i=0; i<startTime; i--) {
-
-    }
+    startTime--;
+    document.getElementById("timer").innerHTML = startTime;
+    console.log(startTime)
 }
 
-setInterval(minusAMinute, 6000);
+start.addEventListener('click', () => {
+    document.getElementById("timer").innerHTML = startTime;
+    setInterval(minusAMinute, 60000);
+})
+
+
+
