@@ -17,7 +17,12 @@ minusAMinute = () => {
 }
 
 minusSecond = () => {
-    startSecond--;
+    if (startSecond === 0) {
+        startSecond = 60;
+    }
+    else {
+        startSecond--;
+    }
     document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
 }
 
