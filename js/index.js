@@ -9,6 +9,8 @@ let startSecond = 60;
 
 // appendage();
 
+console.log(moment().format('dddd'))
+
 const start = document.getElementById("start-button")
 
 minusAMinute = () => {
