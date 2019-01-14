@@ -21,17 +21,15 @@ body {
 }
 
 .panel-1 {
-    background-image: url('../images/alarm-clock-analog-analogue-1065712.jpg')
-}
-
-.panel-2 {
     background-image: url('../images/analogue-classic-clock-280264.jpg')
 }
 
-.panel-3 {
-    background-image: url('../images/black-and-white-black-and-white-clocks-707676.jpg')
-}
-
-.panel-4 {
+.panel-2 {
     background-image: url('../images/black-background-clock-hour-39557.jpg')
 }
+
+p {
+    visibility: hidden;
+}
+
+
