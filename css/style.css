@@ -32,4 +32,9 @@ p {
     visibility: hidden;
 }
 
-
+button {
+    background-color: teal;
+    border: 2px solid teal;
+    color: gainsboro;
+    margin: 5px;
+}
