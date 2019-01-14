@@ -8,6 +8,7 @@ body {
 }
 
 .panel {
+    border: 1px solid black;
     text-align: center;
     align-items: center;
     background-size: cover;
@@ -28,7 +29,7 @@ body {
 }
 
 .panel-3 {
-    background-image: url('../images/ancient-antique-architecture-280395.jpg')
+    background-image: url('../images/black-and-white-black-and-white-clocks-707676.jpg')
 }
 
 .panel-4 {
