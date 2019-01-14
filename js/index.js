@@ -20,7 +20,7 @@ minusAMinute = () => {
 }
 
 minusSecond = () => {
-    if (startSecond === 0) {
+    if (startSecond === 1) {
         startSecond = 60;
     }
     else {
@@ -36,8 +36,8 @@ pauseTimer = () => {
 }
 
 start.addEventListener('click', () => {
-    setInterval(minusAMinute, 60000);
     setInterval(minusSecond, 1000);
+    setInterval(minusAMinute, 60000);
     pauseTimer();
 })
 
