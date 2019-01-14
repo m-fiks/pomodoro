@@ -3,20 +3,18 @@ let startTime = 25;
 let startSecond = 60;
 const start = document.getElementById("start-button");
 const pause = document.getElementById("pause-button");
-// appendage = () => {
-//     let poppy = document.getElementById("timer")
-//     poppy.append("<p>Text.</p>")
-// }
-
-// appendage();
+let breakTime = 5;
 
 console.log(moment().format('dddd'))
 
-
-
 minusAMinute = () => {
-    startTime--;
-    document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
+    if (startTime === 0) {
+        //start break time
+    }
+    else {
+        startTime--;
+        document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
+    }
 }
 
 minusSecond = () => {
