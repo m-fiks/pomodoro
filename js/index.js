@@ -7,29 +7,33 @@ let breakTime = 5;
 
 console.log(moment().format('dddd'))
 
-let minusAMinute = setInterval(function() {
-    if (startTime === 0) {
-        //start break time
-    }
-    else {
-        startTime--;
-    }
-    document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
-}, 60000);
+function minusAMinute() {
+    setInterval(function() {
+        if (startTime === 0) {
+            //start break time
+        }
+        else {
+            startTime--;
+        }
+        document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
+    }, 60000);
+};
 
-let minusASecond = setInterval(function() {
-    if (startSecond === 1) {
-        startSecond = 60;
-    }
-    else {
-        startSecond--;
-    }
-    document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
-}, 1000);
+function minusASecond () {
+    setInterval(function() {
+        if (startSecond === 1) {
+            startSecond = 60;
+        }
+        else {
+            startSecond--;
+        }
+        document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
+    }, 1000);
+}
 
 start.addEventListener('click', () => {
-    minusAMinute;
-    minusASecond;
+    minusAMinute();
+    minusASecond();
     pauseTimer();
     document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
 })
@@ -37,5 +41,6 @@ start.addEventListener('click', () => {
 pauseTimer = () => {
     pause.addEventListener("click", () => {
         console.log(`${startTime} : ${startSecond}`)
+        //clearInterval()
     })
 }
