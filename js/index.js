@@ -7,17 +7,17 @@ let breakTime = 5;
 
 console.log(moment().format('dddd'))
 
-minusAMinute = () => {
+let minusAMinute = setInterval(function() {
     if (startTime === 0) {
         //start break time
     }
     else {
         startTime--;
-        document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
     }
-}
+    document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
+}, 60000);
 
-minusSecond = () => {
+let minusASecond = setInterval(function() {
     if (startSecond === 1) {
         startSecond = 60;
     }
@@ -25,18 +25,17 @@ minusSecond = () => {
         startSecond--;
     }
     document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
-}
+}, 1000);
+
+start.addEventListener('click', () => {
+    minusAMinute;
+    minusASecond;
+    pauseTimer();
+    document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
+})
 
 pauseTimer = () => {
     pause.addEventListener("click", () => {
-        console.log('pause')
+        console.log(`${startTime} : ${startSecond}`)
     })
 }
-
-start.addEventListener('click', () => {
-    setInterval(minusSecond, 1000);
-    setInterval(minusAMinute, 60000);
-    pauseTimer();
-})
-
-
