@@ -1,6 +1,6 @@
 const date = Date.now();
 let startTime = 25;
-let startSecond = 60;
+let startSecond = 13;
 const start = document.getElementById("start-button");
 const pause = document.getElementById("pause-button");
 let breakTime = 5;
@@ -24,10 +24,8 @@ function minusASecond () {
         if (startSecond === 1) {
             startSecond = 60;
         }
-        else {
-            startSecond--;
-        }
-        document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
+        startSecond--;
+        document.getElementById("timer").innerHTML = `${startTime}:${startSecond < 10 ? '0' : ''}${startSecond}`;
     }, 1000);
 }
 
