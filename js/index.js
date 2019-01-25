@@ -1,6 +1,6 @@
 const date = Date.now();
 let startTime = 25;
-let startSecond = 13;
+let startSecond = 60;
 const start = document.getElementById("start-button");
 const pause = document.getElementById("pause-button");
 let breakTime = 5;
@@ -38,6 +38,8 @@ start.addEventListener('click', () => {
 
 pauseTimer = () => {
     pause.addEventListener("click", () => {
+        startTime = startTime;
+        startSecond = startSecond;
         console.log(`${startTime} : ${startSecond}`)
         //clearInterval()
     })
