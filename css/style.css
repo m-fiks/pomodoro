@@ -1,5 +1,6 @@
 body {
     background-color: rgba(221, 21, 21, 0.486);
+    font-family: 'Major Mono Display', monospace;
 }
 
 .panels {
@@ -37,4 +38,6 @@ button {
     border: 2px solid teal;
     color: gainsboro;
     margin: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
 }
