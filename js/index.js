@@ -1,54 +1,40 @@
-const date = Date.now();
-let startTime = 24;
-let startSecond = 60;
-let paused;
 const start = document.getElementById("start-button");
 const pause = document.getElementById("pause-button");
-let breakTime = 5;
+const resume = document.getElementById("resume-button");
 
+let Clock = {
+    totalSeconds: 60,
 
-console.log(moment().format('dddd'))
+    start: function () {
+        let self = this;
 
-function minusAMinute() {
-    setInterval(function() {
-        if (startTime === 0) {
-            //start break time
-        }
-        else {
-            startTime--;
-        }
-        document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
-    }, 60000);
+        this.interval = setInterval (() => {
+            self.totalSeconds -= 1;
+
+            $("#min").text(Math.floor(self.totalSeconds / 60 % 60));
+            $("#sec").text(parseInt(self.totalSeconds % 60));
+        }, 1000);
+    },
+
+    pause: function () {
+        clearInterval(this.interval);
+        delete this.interval;
+    },
+
+    resume: function () {
+        if (!this.interval) this.start();
+    }
 };
 
-function minusASecond () {
-    setInterval(function() {
-            if (startSecond === 1) {
-                startSecond = 60;
-            }
-            startSecond--;
-            document.getElementById("timer").innerHTML = `${startTime}:${startSecond < 10 ? '0' : ''}${startSecond}`;
-        }, 1000);
-}
-
 start.addEventListener('click', () => {
-    paused = false;
-    minusAMinute();
-    minusASecond();
-    pauseTimer();
-    document.getElementById("timer").innerHTML = `${startTime}:${startSecond}`;
+    Clock.start();
 })
 
-function pauseTimer () {
-    pause.addEventListener("click", () => {
-        console.log('psfdsk')
-        onPause();
-    })
-}
+pause.addEventListener('click', () => {
+    Clock.pause();
+});
 
-function onPause () {
-    paused = true;
-    clearInterval(minusASecond)
-    clearInterval(minusAMinute)
-    document.getElementById("timer").innerHTML = `paused`
-}
+resume.addEventListener('click', () => {
+    Clock.resume();
+})
+
