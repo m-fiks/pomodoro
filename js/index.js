@@ -3,7 +3,7 @@ const pause = document.getElementById("pause-button");
 const resume = document.getElementById("resume-button");
 
 let Clock = {
-    totalSeconds: 60,
+    totalSeconds: 1500,
 
     start: function () {
         let self = this;
@@ -11,7 +11,7 @@ let Clock = {
         this.interval = setInterval (() => {
             self.totalSeconds -= 1;
 
-            $("#min").text(Math.floor(self.totalSeconds / 60 % 60));
+            $("#min").text(Math.floor(self.totalSeconds / 60));
             $("#sec").text(parseInt(self.totalSeconds % 60));
         }, 1000);
     },
